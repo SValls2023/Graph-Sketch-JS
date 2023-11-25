@@ -1,11 +1,12 @@
-// Grid Container 
+// Element queries
 const gridContainer = document.querySelector('#grid-container');
 const slider = document.querySelector('#slider');
 const slideValue = document.querySelector('#value');
 
+// Grid slider event listeners
 slider.oninput = function () {
     slideValue.textContent = `${this.value} x ${this.value}`;
-};
+}; 
 
 slider.onchange = function () {
     makeGrid(this.value);
