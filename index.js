@@ -4,20 +4,14 @@ const slider = document.querySelector('#slider');
 const slideValue = document.querySelector('#value');
 
 slider.oninput = function () {
-    makeGrid(this.value);
     slideValue.textContent = `${this.value} x ${this.value}`;
 };
 
-// changeSize.addEventListener('click', (e) => {
-//     if (e.target.tagName === 'BUTTON') {
-//         makeGrid(e.target.value);
-//     }
-// })
+slider.onchange = function () {
+    makeGrid(this.value);
+}
 
-// Note for later: 
-// 8 * 8 = 60px;
-// 16 * 16 = 30px;
-// 24 * 24 = 20px;
+// Create Grid 
 function makeGrid(squaresBy = 16) {
     gridContainer.replaceChildren();
     let squarePixels = 480/parseFloat(squaresBy);
