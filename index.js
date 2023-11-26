@@ -44,15 +44,13 @@ function makeGrid(squaresBy = 16) {
 }
 
 // Draw
-gridContainer.addEventListener("mousedown", (e) => {
-    if(e.target.className === "square") {
-        e.target.style.backgroundColor = penColor;
-        gridContainer.addEventListener("mouseover", paintSquare);
-        gridContainer.addEventListener("mouseup", () => {
-                gridContainer.removeEventListener("mouseover", paintSquare)
-            }
-        )
-    }
+gridContainer.addEventListener("pointerdown", (e) => {
+    paintSquare(e);
+    gridContainer.addEventListener("pointermove", paintSquare);
+    gridContainer.addEventListener("pointerup", () => {
+            gridContainer.removeEventListener("pointermove", paintSquare)
+        }
+    )
 });
 
 function paintSquare(e) {
