@@ -25,7 +25,7 @@ h1 {
     background-color: #6D61A1;
 }
 
-.row div {
+#grid-container .row .square {
     border-style: solid;
     border-width: 0.25px;
     border-color: black;
