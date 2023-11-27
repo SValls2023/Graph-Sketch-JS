@@ -45,25 +45,29 @@ function makeGrid(squaresBy = 16) {
 gridContainer.addEventListener("pointerdown", (e) => {
     if (eraserToggle.checked) {
         eraseSquare(e);
-        gridContainer.addEventListener("pointermove", eraseSquare);
+        gridContainer.addEventListener("pointerover", eraseSquare);
         gridContainer.addEventListener("pointerup", () => {
-                gridContainer.removeEventListener("pointermove", eraseSquare)
+                gridContainer.removeEventListener("pointerover", eraseSquare)
             }
         )
     }
-    else if (rainbowToggle.checked) {
+    if (rainbowToggle.checked) {
+        if (eraserToggle.checked) {
+            eraserToggle.checked = false;
+        }
         rainbowSquare(e);
-        gridContainer.addEventListener("pointermove", rainbowSquare);
+        gridContainer.addEventListener("pointerover", rainbowSquare);
         gridContainer.addEventListener("pointerup", () => {
-                gridContainer.removeEventListener("pointermove", rainbowSquare)
-            }
+                gridContainer.removeEventListener("pointerover", rainbowSquare)
+            },
+            { once: true }
         )
     }
     else {
         paintSquare(e);
-        gridContainer.addEventListener("pointermove", paintSquare);
+        gridContainer.addEventListener("pointerover", paintSquare);
         gridContainer.addEventListener("pointerup", () => {
-                gridContainer.removeEventListener("pointermove", paintSquare)
+                gridContainer.removeEventListener("pointerover", paintSquare)
             }
         )
     }
