@@ -8,22 +8,38 @@
 </head>
 <body onload="makeGrid()">
     <h1>Etch-a-Sketch</h1>
-    <div id="color-container">
-        <h3>Pick Color</h3>
-        <input id="color-picker" type="color" value="#000000">
+    <div id="options">
+        <div id="color-container">
+            <h3>Color Picker</h3>
+            <input id="color-picker" type="color" value="#000000">
+        </div>
+        <div id="rainbow-container">
+            <h3>Rainbow Mode</h3>
+            <label class="switch">
+                <input id="rainbow" type="checkbox">
+                <span class="toggle round"></span>
+            </label>
+        </div>
+        <div id="eraser-container">
+            <h3>Eraser Mode</h3>
+            <label class="switch">
+                <input id="eraser" type="checkbox">
+                <span class="toggle round"></span>
+            </label>
+        </div>
+        <div id="range">
+            <h3>Change Size</h3>
+            <div class="slider-value">
+                <span id="value">16 x 16</span>
+            </div>
+            <div class="field">
+                <div>min</div>
+                <input id="slider" type="range" min="1" max="64" value="16" step="1">
+                <div>max</div>
+            </div>
+        </div>
     </div>
     <div id="grid-container"></div>
-    <div id="range">
-        <h3>Change Size</h3>
-        <div class="slider-value">
-            <span id="value">16 x 16</span>
-        </div>
-        <div class="field">
-            <div>min</div>
-            <input id="slider" type="range" min="1" max="64" value="16" step="1">
-            <div>max</div>
-        </div>
-    </div>
     <script src="index.js"></script>
 </body>
 </html>

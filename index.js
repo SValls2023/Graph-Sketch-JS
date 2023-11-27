@@ -1,8 +1,10 @@
 // Query Selectors
+const colorPicker = document.querySelector('#color-picker');
+const rainbowToggle = document.querySelector('#rainbow');
+const eraserToggle = document.querySelector('#eraser')
 const gridContainer = document.querySelector('#grid-container');
 const slider = document.querySelector('#slider');
 const slideValue = document.querySelector('#value');
-const colorPicker = document.querySelector("#color-picker");
 
 // Pen Color
 let penColor = "#000000";
@@ -12,7 +14,7 @@ colorPicker.addEventListener("input", (e) => {
     penColor = e.target.value;
 });
 
-// Slider Event Listeners
+// Slider Event Listeners (For changing grid size)
 slider.oninput = function () {
     slideValue.textContent = `${this.value} x ${this.value}`;
 };
@@ -27,7 +29,6 @@ function makeGrid(squaresBy = 16) {
     let squarePixels = 480/parseFloat(squaresBy);
     for (let i = 0; i < squaresBy; i++) {
         const row = document.createElement('div');
-        // console.log(row)
         row.classList.add("row");
         for (let j = 0; j < squaresBy; j++) {
             const square = document.createElement('div');
@@ -35,27 +36,58 @@ function makeGrid(squaresBy = 16) {
             square.style.height = `${squarePixels}px`;
             square.style.width = `${squarePixels}px`;
             row.appendChild(square);
-
-            //console.log(square);
         }
         gridContainer.appendChild(row);
-        //console.log(gridContainer);
     }
 }
 
-// Draw
+// Draw Event Listener
 gridContainer.addEventListener("pointerdown", (e) => {
-    paintSquare(e);
-    gridContainer.addEventListener("pointermove", paintSquare);
-    gridContainer.addEventListener("pointerup", () => {
-            gridContainer.removeEventListener("pointermove", paintSquare)
-        }
-    )
+    if (eraserToggle.checked) {
+        eraseSquare(e);
+        gridContainer.addEventListener("pointermove", eraseSquare);
+        gridContainer.addEventListener("pointerup", () => {
+                gridContainer.removeEventListener("pointermove", eraseSquare)
+            }
+        )
+    }
+    else if (rainbowToggle.checked) {
+        rainbowSquare(e);
+        gridContainer.addEventListener("pointermove", rainbowSquare);
+        gridContainer.addEventListener("pointerup", () => {
+                gridContainer.removeEventListener("pointermove", rainbowSquare)
+            }
+        )
+    }
+    else {
+        paintSquare(e);
+        gridContainer.addEventListener("pointermove", paintSquare);
+        gridContainer.addEventListener("pointerup", () => {
+                gridContainer.removeEventListener("pointermove", paintSquare)
+            }
+        )
+    }
 });
 
+// Change Background Color of Sqaure
 function paintSquare(e) {
     if (e.target.className === "square") {
         e.target.style.backgroundColor = penColor;
+    }
+}
+
+function rainbowSquare(e) {
+    if (e.target.className === "square") {
+        const red = Math.floor(Math.random() * 256);
+        const green = Math.floor(Math.random() * 256);
+        const blue = Math.floor(Math.random() * 256);
+        e.target.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+    }
+}
+
+function eraseSquare(e) {
+    if (e.target.className === "square") {
+        e.target.style.backgroundColor = "#ffffff";
     }
 }
 

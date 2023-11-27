@@ -14,6 +14,76 @@ h1 {
     color: #998BEB;
 }
 
+/* Options Menu */
+#options {
+    display: flex;
+    gap: 10px;
+}
+
+/* Options Menu: Toggle Switches */
+#options .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+#options .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .2s;
+    transition: .2s;
+}
+
+.toggle:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .2s;
+    transition: .2s;
+}
+
+input:checked + .toggle {
+    background-color: #6D61A1;
+    -webkit-transition: .2s;
+    transition: .2s;
+}
+
+input:focus + .toggle {
+    box-shadow: 0 0 1px #6D61A1;
+}
+
+input:checked + .toggle:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Options Menu: Toggle Switches (Rounded) */
+.toggle.round {
+    border-radius: 34px;
+}
+
+.toggle.round:before {
+    border-radius: 50%;
+}
+
+/* Grid Container */
 #grid-container {
     display: flex;
     align-items: center;
@@ -30,4 +100,5 @@ h1 {
     border-width: 0.25px;
     border-color: black;
     background-color: white;
+    cursor: pointer;
 }
