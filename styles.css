@@ -20,7 +20,7 @@ h1 {
     gap: 10px;
 }
 
-/* Options Menu: Toggle Switches */
+/* Options Menu: Toggle Switches
 #options .switch {
     position: relative;
     display: inline-block;
@@ -74,7 +74,7 @@ input:checked + .toggle:before {
     transform: translateX(26px);
 }
 
-/* Options Menu: Toggle Switches (Rounded) */
+Options Menu: Toggle Switches (Rounded) 
 .toggle.round {
     border-radius: 34px;
 }
@@ -82,6 +82,7 @@ input:checked + .toggle:before {
 .toggle.round:before {
     border-radius: 50%;
 }
+*/
 
 /* Grid Container */
 #grid-container {

@@ -15,19 +15,11 @@
             <h3>Background Color</h3>
             <input id="background-color" type="color" value="#ffffff">
         </div>
-        <div id="rainbow-container"> 
-            <h3>Rainbow Mode</h3>
-            <label class="switch">
-                <input id="rainbow" type="checkbox">
-                <span class="toggle round"></span>
-            </label>
-        </div>
-        <div id="eraser-container">
-            <h3>Eraser Mode</h3>
-            <label class="switch">
-                <input id="eraser" type="checkbox">
-                <span class="toggle round"></span>
-            </label>
+        <div id="pen-container">
+            <button id="eraser" value="OFF">Eraser Mode</button>
+            <button id="rainbow" value="OFF">Rainbow Mode</button>
+            <!-- <button id="darken" value="OFF">Shading Mode</button>
+            <button id="lighten" value="OFF">Lighten Mode</button> -->
         </div>
         <div id="range">
             <h3>Change Size</h3>
@@ -40,10 +32,8 @@
                 <div>max</div>
             </div>
         </div>
-        <div id="clear">
-            <div>
-                <button id="clear">Clear</button>
-            </div>
+        <div id="clear-container">
+            <button id="clear">Clear</button>
         </div>
     </div>
     <div id="grid-container"></div>
