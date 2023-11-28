@@ -5,6 +5,7 @@ const eraserToggle = document.querySelector('#eraser')
 const gridContainer = document.querySelector('#grid-container');
 const slider = document.querySelector('#slider');
 const slideValue = document.querySelector('#value');
+const clearGrid = document.querySelector('#clear');
 
 // Grid Creation //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -67,6 +68,13 @@ function changeBackground (color) {
         row[i].style.backgroundColor = color;
     }
 }
+
+clearGrid.addEventListener("click", () => {
+    const square = gridContainer.querySelectorAll('.row .square');
+    for (let i = 0; i < square.length; i++) {
+        square[i].style.backgroundColor = '';
+    }
+})
 
 // Draw Features //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
