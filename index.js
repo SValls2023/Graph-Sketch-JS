@@ -117,6 +117,6 @@ function rainbowSquare(e) {
 
 function eraseSquare(e, color = gridColor) {
     if (e.target.className === "square") {
-        e.target.style.backgroundColor = `${color}`;
+        e.target.style.backgroundColor = ``;
     }
 }
