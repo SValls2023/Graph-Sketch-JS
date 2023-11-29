@@ -75,6 +75,8 @@ function changeBackground (color) {
 /* Pen Toggles */
 let eraser = document.querySelector('#eraser');
 let rainbow = document.querySelector('#rainbow');
+let darken = document.querySelector('#darken');
+let lighten = document.querySelector('#lighten');
 penContainer.addEventListener("click", (e) => {
     if(e.target.id === 'eraser') {
         if (eraser.value === "ON") {
@@ -83,7 +85,9 @@ penContainer.addEventListener("click", (e) => {
         else {
             eraser.value = "ON"
         }
-        rainbow.value = "OFF"
+        rainbow.value = "OFF";
+        darken.value = "OFF";
+        lighten.value = "OFF";
     }
     if(e.target.id === 'rainbow') {
         if (rainbow.value === "ON") {
@@ -93,6 +97,30 @@ penContainer.addEventListener("click", (e) => {
             rainbow.value = "ON"
         }
         eraser.value = "OFF"
+        darken.value = "OFF";
+        lighten.value = "OFF";
+    }
+    if(e.target.id === 'darken') {
+        if (darken.value === "ON") {
+            darken.value = "OFF"
+        }
+        else {
+            darken.value = "ON"
+        }
+        eraser.value = "OFF"
+        rainbow.value = "OFF";
+        lighten.value = "OFF";
+    }
+    if(e.target.id === 'lighten') {
+        if (lighten.value === "ON") {
+            lighten.value = "OFF"
+        }
+        else {
+            lighten.value = "ON"
+        }
+        eraser.value = "OFF"
+        rainbow.value = "OFF";
+        darken.value = "OFF";
     }
 });
 
