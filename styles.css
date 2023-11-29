@@ -2,22 +2,44 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Apple Chancery', cursive;
+    font-family: 'Courier', monospace;
 }
 
 body {
-    background-color: #C7F6FF;
+    background-color: #837EAA;
 }
 
 h1 {
     text-align: center;
-    color: #998BEB;
+    color: #2F3362;
 }
 
 /* Options Menu */
 #options {
     display: flex;
     gap: 10px;
+}
+
+#options #color-container input {
+    cursor: pointer;
+}
+
+#options #pen-container button {
+    background-color: #AFADB6;
+    color: #2F3362;
+    cursor: pointer;
+    border-color: #2F3362;
+    border-style: solid;
+    padding: 2px;
+}
+
+#options #pen-container button[value="ON"] {
+    background-color: #2F3362;
+    color: #AFADB6;
+    cursor: pointer;
+    border-color: #2F3362;
+    border-style: solid;
+    padding: 2px;
 }
 
 /* Options Menu: Toggle Switches
@@ -93,7 +115,7 @@ Options Menu: Toggle Switches (Rounded)
     padding: 50px; */
     /* width: 625px;
     height: 625px; */
-    background-color: #6D61A1;
+    background-color: #2F3362;
 }
 
 #grid-container .row .square {
