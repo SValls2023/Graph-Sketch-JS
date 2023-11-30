@@ -2,18 +2,129 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Apple Chancery', cursive;
+    font-family: 'Courier', monospace;
 }
 
 body {
-    background-color: #C7F6FF;
+    background-color: #837EAA;
 }
 
 h1 {
     text-align: center;
-    color: #998BEB;
+    color: #2F3362;
 }
 
+/* Options Menu */
+#options {
+    display: flex;
+    gap: 10px;
+}
+
+#options #color-container input {
+    cursor: pointer;
+}
+
+#options #pen-container button {
+    background-color: #AFADB6;
+    color: #2F3362;
+    cursor: pointer;
+    border-color: #2F3362;
+    border-style: solid;
+    padding: 2px;
+}
+
+#options #pen-container button[value="ON"], button:active {
+    background-color: #2F3362;
+    color: #AFADB6;
+    cursor: pointer;
+    border-color: #2F3362;
+    border-style: solid;
+    padding: 2px;
+}
+
+#options #clear-container button {
+    background-color: #AFADB6;
+    color: #2F3362;
+    cursor: pointer;
+    border-color: #2F3362;
+    border-style: solid;
+    padding: 2px;
+}
+
+#options #clear-container button:active {
+    background-color: #2F3362;
+    color: #AFADB6;
+    cursor: pointer;
+    border-color: #2F3362;
+    border-style: solid;
+    padding: 2px;
+}
+
+/* Options Menu: Toggle Switches
+#options .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+#options .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .2s;
+    transition: .2s;
+}
+
+.toggle:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .2s;
+    transition: .2s;
+}
+
+input:checked + .toggle {
+    background-color: #6D61A1;
+    -webkit-transition: .2s;
+    transition: .2s;
+}
+
+input:focus + .toggle {
+    box-shadow: 0 0 1px #6D61A1;
+}
+
+input:checked + .toggle:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+Options Menu: Toggle Switches (Rounded) 
+.toggle.round {
+    border-radius: 34px;
+}
+
+.toggle.round:before {
+    border-radius: 50%;
+}
+*/
+
+/* Grid Container */
 #grid-container {
     display: flex;
     align-items: center;
@@ -22,12 +133,13 @@ h1 {
     padding: 50px; */
     /* width: 625px;
     height: 625px; */
-    background-color: #6D61A1;
+    background-color: #2F3362;
 }
 
-.row div {
-    border-style: solid;
+#grid-container .row .square {
+    /* border-style: solid;
     border-width: 0.25px;
     border-color: black;
-    background-color: white;
+    background-color: white; */
+    cursor: pointer;
 }

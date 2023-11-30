@@ -8,17 +8,35 @@
 </head>
 <body onload="makeGrid()">
     <h1>Etch-a-Sketch</h1>
-    <div id="grid-container"></div>
-    <div id="range">
-        <div class="slider-value">
-            <span id="value">16 x 16</span>
+    <div id="options">
+        <div id="color-container">
+            <h3>Pen Color</h3>
+            <input id="pen-color" type="color" value="#000000">
+            <h3>Background Color</h3>
+            <input id="background-color" type="color" value="#ffffff">
         </div>
-        <div class="field">
-            <div>min</div>
-            <input id="slider" type="range" min="1" max="64" value="16" step="1">
-            <div>max</div>
+        <div id="pen-container">
+            <button id="eraser" value="OFF">Eraser Mode</button>
+            <button id="rainbow" value="OFF">Rainbow Mode</button>
+            <button id="darken" value="OFF">Shading Mode</button>
+            <button id="lighten" value="OFF">Lighten Mode</button>
+        </div>
+        <div id="range">
+            <h3>Change Size</h3>
+            <div class="slider-value">
+                <span id="value">16 x 16</span>
+            </div>
+            <div class="field">
+                <div>min</div>
+                <input id="slider" type="range" min="1" max="64" value="16" step="1">
+                <div>max</div>
+            </div>
+        </div>
+        <div id="clear-container">
+            <button id="clear">Clear</button>
         </div>
     </div>
+    <div id="grid-container"></div>
     <script src="index.js"></script>
 </body>
 </html>
