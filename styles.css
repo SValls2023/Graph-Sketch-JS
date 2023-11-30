@@ -33,7 +33,25 @@ h1 {
     padding: 2px;
 }
 
-#options #pen-container button[value="ON"] {
+#options #pen-container button[value="ON"], button:active {
+    background-color: #2F3362;
+    color: #AFADB6;
+    cursor: pointer;
+    border-color: #2F3362;
+    border-style: solid;
+    padding: 2px;
+}
+
+#options #clear-container button {
+    background-color: #AFADB6;
+    color: #2F3362;
+    cursor: pointer;
+    border-color: #2F3362;
+    border-style: solid;
+    padding: 2px;
+}
+
+#options #clear-container button:active {
     background-color: #2F3362;
     color: #AFADB6;
     cursor: pointer;

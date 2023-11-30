@@ -153,6 +153,22 @@ gridContainer.addEventListener("pointerdown", (e) => {
             }
         )
     }
+    else if (darken.value === "ON") {
+        shadeSquare(e);
+        gridContainer.addEventListener("pointerover", shadeSquare);
+        gridContainer.addEventListener("pointerup", () => {
+                gridContainer.removeEventListener("pointerover", shadeSquare)
+            }
+        )
+    }
+    else if (lighten.value === "ON") {
+        lightenSquare(e);
+        gridContainer.addEventListener("pointerover", lightenSquare);
+        gridContainer.addEventListener("pointerup", () => {
+                gridContainer.removeEventListener("pointerover", lightenSquare)
+            }
+        )
+    }
     else {
         paintSquare(e);
         gridContainer.addEventListener("pointerover", paintSquare);
@@ -170,6 +186,12 @@ function paintSquare(e) {
     }
 }
 
+function eraseSquare(e) {
+    if (e.target.className === "square") {
+        e.target.style.backgroundColor = ``;
+    }
+}
+
 function rainbowSquare(e) {
     if (e.target.className === "square") {
         const red = Math.floor(Math.random() * 256);
@@ -179,8 +201,58 @@ function rainbowSquare(e) {
     }
 }
 
-function eraseSquare(e, color = gridColor) {
+function shadeSquare(e, color = gridColor) {
     if (e.target.className === "square") {
-        e.target.style.backgroundColor = ``;
+        if(e.target.style.backgroundColor === `rgb(0, 0, 0)`) {
+            e.target.style.backgroundColor = `rgb(0, 0, 0)`;
+        }
+        else {
+            if (e.target.style.backgroundColor === ``) {
+                e.target.style.backgroundColor = color;
+            }
+            let newColor = e.target.style.backgroundColor;
+            newColor = changeRGBString(newColor, 'd');
+            e.target.style.backgroundColor = newColor;
+        }
     }
+}
+
+function lightenSquare(e, color = gridColor) {
+    if (e.target.className === "square") {
+        if(e.target.style.backgroundColor === `rgb(255, 255, 255)`) {
+            e.target.style.backgroundColor = `rgb(255, 255, 255)`;
+        }
+        else {
+            if (e.target.style.backgroundColor === ``) {
+                e.target.style.backgroundColor = color;
+            }
+            let newColor = e.target.style.backgroundColor;
+            newColor = changeRGBString(newColor, 'l');
+            e.target.style.backgroundColor = newColor;
+        }
+    }
+}
+
+function changeRGBString(rgbString, request) {
+    rgbString = rgbString.slice(4, (rgbString.length - 1));
+    console.log(rgbString);
+    const rgbArray = rgbString.split(',').map(Number);
+
+    if (request === 'd') {
+        for(let i = 0; i < rgbArray.length; i++) {
+            console.log('Before: ' + rgbArray[i]);
+            rgbArray[i] = Math.round(Math.min(255, Math.max(0, rgbArray[i] - (0.1 * 255))));
+            console.log('After: ' + rgbArray[i]);
+        }
+    }
+
+    else {
+        for(let i = 0; i < rgbArray.length; i++) {
+            console.log('Before: ' + rgbArray[i]);
+            rgbArray[i] = Math.round(Math.min(255, Math.max(0, rgbArray[i] + (0.1 * 255))));
+            console.log('After: ' + rgbArray[i]);
+        }
+    }
+
+    return `rgb(${rgbArray[0]}, ${rgbArray[1]}, ${rgbArray[2]})`;
 }
