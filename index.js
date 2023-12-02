@@ -11,15 +11,15 @@ const clearGrid = document.querySelector('#clear-container');
 // Create Grid 
 function makeGrid(squaresBy = 16, color = `rgb(255, 255, 255)`) {
     gridContainer.replaceChildren();
-    let squarePixels = 480/parseFloat(squaresBy);
+    let squarePixels = 30/parseFloat(squaresBy);
     for (let i = 0; i < squaresBy; i++) {
         const row = document.createElement('div');
         row.classList.add("row");
         for (let j = 0; j < squaresBy; j++) {
             const square = document.createElement('div');
             square.classList.add("square");
-            square.style.cssText = `height: ${squarePixels}px;
-                                    width: ${squarePixels}px;
+            square.style.cssText = `height: ${squarePixels}em;
+                                    width: ${squarePixels}em;
                                     border-style: solid;
                                     border-width: 0.25px;
                                     border-color: black;`
