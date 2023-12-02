@@ -8,35 +8,35 @@
 </head>
 <body onload="makeGrid()">
     <h1>Etch-a-Sketch</h1>
-    <div id="options">
-        <div id="color-container">
-            <h3>Pen Color</h3>
-            <input id="pen-color" type="color" value="#000000">
-            <h3>Background Color</h3>
-            <input id="background-color" type="color" value="#ffffff">
-        </div>
-        <div id="pen-container">
-            <button id="eraser" value="OFF">Eraser Mode</button>
-            <button id="rainbow" value="OFF">Rainbow Mode</button>
-            <button id="darken" value="OFF">Shading Mode</button>
-            <button id="lighten" value="OFF">Lighten Mode</button>
-        </div>
-        <div id="range">
-            <h3>Change Size</h3>
-            <div class="slider-value">
-                <span id="value">16 x 16</span>
+    <div id="main-container" class="container">
+        <div id="options" class="container">
+            <div id="color-container" class="container">
+                <h3>Pen Color</h3>
+                <input id="pen-color" type="color" value="#000000">
+                <h3>Background Color</h3>
+                <input id="background-color" type="color" value="#ffffff">
             </div>
-            <div class="field">
-                <div>min</div>
-                <input id="slider" type="range" min="1" max="64" value="16" step="1">
-                <div>max</div>
+            <div id="pen-container" class="container">
+                <button id="eraser" value="OFF">Eraser Mode</button>
+                <button id="rainbow" value="OFF">Rainbow Mode</button>
+                <button id="darken" value="OFF">Shading Mode</button>
+                <button id="lighten" value="OFF">Lighten Mode</button>
+            </div>
+            <div id="range" class="container">
+                <h3>Change Size</h3>
+                <div class="slider-value" class="container">
+                    <span id="value">16 x 16</span>
+                </div>
+                <div class="field" class="container">
+                    <input id="slider" type="range" min="1" max="64" value="16" step="1">
+                </div>
+            </div>
+            <div id="clear-container" class="container">
+                <button id="clear">Clear</button>
             </div>
         </div>
-        <div id="clear-container">
-            <button id="clear">Clear</button>
-        </div>
+        <div id="grid-container" class="container"></div>
     </div>
-    <div id="grid-container"></div>
     <script src="index.js"></script>
 </body>
 </html>

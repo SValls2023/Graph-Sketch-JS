@@ -2,141 +2,159 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Courier', monospace;
+    font-family: 'Verdana', sans-serif;
 }
 
 body {
-    background-color: #837EAA;
+    background-color: #3e4359;
+    font-size: 18px;
+}
+
+h1, h3, span {
+    margin: auto;
+    text-align: center;
+    color: #b8c2d9;
 }
 
 h1 {
+    margin: 20px 20px 0 20px;
+    padding: 10px;
+}
+
+.container {
+    border: 2px solid;
+    width: 90%;
+    max-width: 948px;
     text-align: center;
-    color: #2F3362;
+}
+
+#main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 15px auto;
+    padding: 15px;
+    border-style: none;
+    /* width: 80%; */
 }
 
 /* Options Menu */
-#options {
+#main-container #options {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2.5%;
+    padding: 2.5%;
     gap: 10px;
+    border-style: none;
+    /* height: 200px;
+    width: 150px; */
 }
 
-#options #color-container input {
-    cursor: pointer;
-}
-
-#options #pen-container button {
-    background-color: #AFADB6;
-    color: #2F3362;
-    cursor: pointer;
-    border-color: #2F3362;
-    border-style: solid;
-    padding: 2px;
-}
-
-#options #pen-container button[value="ON"], button:active {
+#main-container #options #color-container {
+    padding: 4.5%;
+    margin: 2.5%;
+    width: 110%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: #2F3362;
-    color: #AFADB6;
-    cursor: pointer;
-    border-color: #2F3362;
-    border-style: solid;
-    padding: 2px;
 }
 
-#options #clear-container button {
-    background-color: #AFADB6;
-    color: #2F3362;
-    cursor: pointer;
-    border-color: #2F3362;
-    border-style: solid;
-    padding: 2px;
-}
-
-#options #clear-container button:active {
-    background-color: #2F3362;
-    color: #AFADB6;
-    cursor: pointer;
-    border-color: #2F3362;
-    border-style: solid;
-    padding: 2px;
-}
-
-/* Options Menu: Toggle Switches
-#options .switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-}
-
-#options .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.toggle {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .2s;
-    transition: .2s;
-}
-
-.toggle:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .2s;
-    transition: .2s;
-}
-
-input:checked + .toggle {
-    background-color: #6D61A1;
-    -webkit-transition: .2s;
-    transition: .2s;
-}
-
-input:focus + .toggle {
-    box-shadow: 0 0 1px #6D61A1;
-}
-
-input:checked + .toggle:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-}
-
-Options Menu: Toggle Switches (Rounded) 
-.toggle.round {
-    border-radius: 34px;
-}
-
-.toggle.round:before {
+#main-container #options #color-container input {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
     border-radius: 50%;
 }
-*/
+
+#main-container #options #color-container input[type="color"]::-webkit-color-swatch {
+    border-radius: 50%;
+    border-color: #AFADB6;
+}
+
+#main-container #options #pen-container, #clear-container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding: 4.5%;
+    margin: 2.5%;
+    gap: 3%;
+    width: 110%;
+    height: 100%;
+    background-color: #2F3362;
+}
+
+#main-container #options #pen-container button {
+    background-color: #AFADB6;
+    color: #2F3362;
+    cursor: pointer;
+    border-color: #2F3362;
+    border-style: solid;
+    margin: 3px;
+    padding: 5px;
+}
+
+#main-container #options #pen-container button[value="ON"], button:active {
+    background-color: #2F3362;
+    color: #AFADB6;
+    cursor: pointer;
+    border-color: #2F3362;
+    border-style: solid;
+    padding: 2px;
+}
+
+#main-container #options #clear-container button {
+    background-color: #AFADB6;
+    color: #2F3362;
+    cursor: pointer;
+    border-color: #2F3362;
+    border-style: solid;
+    padding: 2px;
+}
+
+#main-container #options #clear-container button:active {
+    background-color: #2F3362;
+    color: #AFADB6;
+    cursor: pointer;
+    border-color: #2F3362;
+    border-style: solid;
+    padding: 2px;
+}
+
+#main-container #options #range {
+    padding: 4.5%;
+    margin: 2.5%;
+    background-color: #2F3362;
+    width: 110%;
+    height: 100%;
+}
+
+#main-container #options #range #field input[id="slider"] {
+    width: 150px;
+}
 
 /* Grid Container */
-#grid-container {
+#main-container #grid-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* margin: 50px auto;
-    padding: 50px; */
-    /* width: 625px;
-    height: 625px; */
+    margin: 20px;
+    padding: 15px;
+    width: 75%;
+    height: 75%; 
     background-color: #2F3362;
 }
 
-#grid-container .row .square {
+#main-container #grid-container .row .square {
     /* border-style: solid;
     border-width: 0.25px;
     border-color: black;
